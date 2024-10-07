@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/stylesheets/dog.css" type="text/css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Dog</title>
+</head>
+<body>
+    <div class="main-container">
+        <h2> BarkBuddy: Add Dog</h2>
+        <div class="container">
+            <form action="/dogs" class="form" method="POST">
+                <label for="name">Dog's Name</label>
+                <input
+                 type="text"
+                 name="name"
+                 class="box"
+                 placeholder="Enter Dogs Name" />
+                <label for="age"> Age</label>
+                <input
+                 type="number"
+                 name="age"
+                 class="box"
+                 placeholder="Enter Dog's age" />
+                 <label for="breed"> Breed</label>
+                 <input 
+                 type="text"
+                 name="breed"
+                 class=" box"
+                 placeholder="Enter Dog's Breed" />
+                 <label for="shelter"> Shelter</label>
+                 <input
+                 type="text"
+                 name="shelter"
+                 class="box"
+                 placeholder="Enter Dog's Shelter"
+                  />
+                  <input type="submit" value="Add" id="Add" />
+            </form>
+    </div>
+    <div>
+        <% if (message){ %>
+        <p><%= message %></p>
+       <%} %>
+    </div>
+</body>
+</html>

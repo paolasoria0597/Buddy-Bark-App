@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/stylesheets/sign-up.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <h2> Welcome to BarkBuddy!</h2>
+      <div class="container">
+        <form action="/sign-up" class="form" method="POST">
+          <input type="text" name="name" class="box" placeholder="Enter Name" />
+          <input
+            type="email"
+            name="email"
+            class="box"
+            placeholder="Enter Email"
+          />
+          <input
+            type="password"
+            name="password"
+            class="box"
+            placeholder="Enter Password"
+          />
+          <input
+            type="password"
+            name="confrimPassword"
+            class="box"
+            placeholder="Verify Password"
+          />
+          <input type="submit" value="Sign Up" id="sign-up" />
+        </form>
+      </div>
+      <div>
+        <% if (message) { %>
+        <p><%= message %></p>
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>

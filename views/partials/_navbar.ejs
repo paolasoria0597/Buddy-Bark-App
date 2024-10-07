@@ -1,0 +1,12 @@
+<nav>
+  <p>
+    <a href="/">Bark Buddy</a>
+  </p>
+  <% if (user) { %>
+  <p>
+    <a href="/shelters"> Add Shelter</a>
+  </p>
+  <% } else { %>
+  <p><a href="/sign-up">Sign up</a> or <a href="/sign-in">Sign in</a>.</p>
+  <% } %>
+</nav>

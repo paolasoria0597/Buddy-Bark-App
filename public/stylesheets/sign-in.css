@@ -1,0 +1,61 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* main container Whole page */
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    align-content: center;
+    height: 100vh;
+    gap: 20px;
+}
+
+.main-container h2 {
+    font-size: 3rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+/* container */
+
+.container {
+    display: flex;
+    height: 400px;
+    width: 800px;
+    background-color: lightgray;
+    align-items: center;
+    border-radius: 20px;
+}
+
+/* form classes */
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.box {
+    padding: 12px;
+    width: 60%;
+    margin: 15px;
+    border: 1px solid black;
+    outline: none;
+    border-radius: 20px;
+}
+
+#sign-in {
+    padding: 12px 30px;
+    width: 40%;
+    margin-top: 40px;
+    background-color: #0D99FF;
+    color: white;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+}

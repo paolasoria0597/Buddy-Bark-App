@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/stylesheets/shelter.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Shelter</title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+    <div class="main-container">
+        <h2> BarkBuddy: Add Shelter</h2>
+        <div class="container">
+            <form action="/shelters/add" class="form" method="POST">
+                <label for="name"> Shelter's name</label>
+                <input 
+                type="text" 
+                name="name" 
+                class="box" 
+                placeholder="Enter Name" />
+                <label for="address"> Shelter's Address</label>
+                <input
+                type="text"
+                name="address"
+                class="box"
+                placeholder="Enter Address"
+                />
+                <label for="phone"> Shelter's Phone Number</label>
+                <input 
+                type="text"
+                name="phone"
+                class="box"
+                placeholder="Enter Phone Number"
+                />
+                <label for="email"> Shelter's Email</label>
+                <input 
+                type="email"
+                name="email"
+                class="box"
+                placeholder="Enter Email"
+                />
+                <input type="submit" value="Add" id="Add" />
+            </form>
+        </div>
+        <div>
+            <% if (message) { %>
+            <p><%= message %></p>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>
