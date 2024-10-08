@@ -8,6 +8,7 @@ const signUpController= require("./controllers/auth/sign-up")
 const signInController= require("./controllers/auth/sign-in")
 const shelterController= require("./controllers/shelter.js")
 const dogController= require("./controllers/dog.js")
+const signOutController= require("./controllers/auth/sign-out")
 const isSignedIn = require("./middlewares/is-signed-in.js")
 const passUserToView = require("./middlewares/pass-user-to-view.js")
 
@@ -49,6 +50,7 @@ app.use("/sign-up", signUpController)
 // Everything below or under isSignedIn is a protected route or page 
 app.use("/shelters", shelterController)
 app.use("/dogs", dogController)
+app.use("/sign-out", signOutController)
 mongoose.connection.on("connected", () => {
     console.clear();
     console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
