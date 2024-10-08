@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/stylesheets/home.css" type="text/css" />
     <link rel="stylesheet" href="/stylesheets/dog.css" type="text/css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Dog</title>
+    <title>Edit Dog</title>
 </head>
 <body>
     <header class="header">
@@ -15,9 +14,12 @@
     <div class="main-container">
         <h2> BarkBuddy: Add Dog</h2>
         <div class="container">
-            <form action="/dogs/shelter/<%= shelter._id %>" class="form" method="POST">
-                <%- include('../partials/_dog.ejs', {dog: null}) %>
-                <input type="submit" value="Add" id="Add" />
+            <form action="/dogs/<%= dog._id %>/edit?_method=PUT"
+                class="form"
+                method="POST"
+              >
+                <%- include('../partials/_dog.ejs', { dog }) %>
+                <input type="submit" value="Update" id="Add" />
             </form>
     </div>
     <div>

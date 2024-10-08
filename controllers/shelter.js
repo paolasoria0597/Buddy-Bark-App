@@ -2,6 +2,10 @@ const express= require('express');
 const Shelter = require('../models/shelter');
 const router= express.Router();
 
+router.get('/dashboard', (req,res)=> {
+    res.render('shelters/index.ejs')
+})
+
 router.get("/add", (req,res)=> {
     console.log("Rendering add.ejs");
     res.render("shelters/add", {message:null, shelter: null})

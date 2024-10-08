@@ -53,6 +53,7 @@ app.use("/sign-up", signUpController)
 app.use("/shelters", shelterController)
 app.use("/dogs", dogController)
 app.use("/sign-out", signOutController)
+
 mongoose.connection.on("connected", () => {
     console.clear();
     console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
