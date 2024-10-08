@@ -31,7 +31,8 @@ const userExists= await User.findOne({
     // If there is other data you want to save to `req.session.user`, do so here!
     req.session.user = { // storing data from user in a session. the data stored is email, and _id
         email: userExists.email,
-        _id: userExists._id
+        _id: userExists._id,
+        name: userExists.name,
       };
     
       res.redirect('/');

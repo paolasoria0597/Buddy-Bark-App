@@ -1,12 +1,9 @@
-<nav>
-  <p>
-    <a href="/">Bark Buddy</a>
-  </p>
+<nav class="nav">
   <% if (user) { %>
-  <p>
-    <a href="/shelters"> Add Shelter</a>
-  </p>
+  <a href="/" class="cta-button">Home</a>
+  <a href="/shelters/add" class="cta-button">Add Shelter</a>
   <% } else { %>
-  <p><a href="/sign-up">Sign up</a> or <a href="/sign-in">Sign in</a>.</p>
+  <a href="/sign-in" class="cta-button">Sign in</a>
+  <a href="/sign-up" class="cta-button">Sign up</a>
   <% } %>
 </nav>

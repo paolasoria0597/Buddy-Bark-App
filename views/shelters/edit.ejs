@@ -12,12 +12,16 @@
       <div class="logo">BarkBuddy</div>
       <%- include('../partials/_navbar.ejs') %>
     </header>
-
     <div class="main-container">
       <h2>BarkBuddy: Add Shelter</h2>
       <div class="container">
-        <form action="/shelters/add" class="form" method="POST">
+        <form
+          action="/shelters/edit/<%= shelter._id %>?_method=PUT"
+          class="form"
+          method="POST"
+        >
           <%- include('../partials/_shelter.ejs') %>
+          <input type="submit" value="Update" id="Add" />
         </form>
       </div>
       <div>

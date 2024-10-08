@@ -3,17 +3,46 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Welcome to Bark buddy</title>
+    <title>Welcome to BarkBuddy - Dog Shelters Portal</title>
+    <link rel="stylesheet" href="/stylesheets/home.css" type="text/css" />
   </head>
   <body>
-    <%- include('./partials/_navbar.ejs') %> 
-    <% if (!user) {%>
-    <h1>Welcome to BarkBuddy</h1>
-    <% } else { %>
-      <a href="/sign-out">Sign Out</a></li>
-    <main>
+    <!-- Header Section -->
+    <header class="header">
+      <div class="logo">BarkBuddy</div>
+      <%- include('./partials/_navbar.ejs') %>
+    </header>
 
-    </main>
-    <% } %>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Welcome to BarkBuddy!</h1>
+
+        <% if (!user) {%>
+        <p>
+          Connecting shelters with loving adopters. Manage your shelter and find
+          forever homes for all dogs.
+        </p>
+        <div class="hero-buttons">
+          <a href="/sign-in" class="cta-button">Sign In</a>
+          <a href="/sign-up" class="cta-button">Sign Up</a>
+        </div>
+        <% } else { %>
+
+        <p>
+          Welcome <%= user.name %>, You can now manage your Shelters and Angels.
+        </p>
+        <div class="hero-buttons">
+          <a href="/dashboard" class="cta-button">Go to Dashboard</a>
+          <a href="/sign-out" class="cta-button">Sign Out</a>
+        </div>
+        <% } %>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <p>&copy; 2024 BarkBuddy. All Rights Reserved.</p>
+    </footer>
   </body>
 </html>

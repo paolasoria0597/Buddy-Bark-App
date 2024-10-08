@@ -4,6 +4,7 @@ const express = require('express');
 const morgan= require('morgan');
 const session = require("express-session");
 const mongoose = require("mongoose");
+const methodOverride = require("method-override");
 const signUpController= require("./controllers/auth/sign-up")
 const signInController= require("./controllers/auth/sign-in")
 const shelterController= require("./controllers/shelter.js")
@@ -15,6 +16,7 @@ const passUserToView = require("./middlewares/pass-user-to-view.js")
 const app= express();
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+app.use(methodOverride("_method"));
 
 app.use(morgan('dev'));
 app.use(
