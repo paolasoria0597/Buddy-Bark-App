@@ -1,0 +1,233 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+
+.main-content {
+    display: flex;
+    flex-grow: 1;
+}
+
+.left-panel {
+    background-color: #f2f2f2;
+    width: 60%;
+    padding: 20px;
+    margin: 20px;
+    overflow-y: auto;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+.right-panel {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    justify-content: space-around;
+}
+
+
+.right-panel > div {
+    background-color: #e0e0e0;
+    padding: 20px;
+    overflow-y: auto; /* For scrolling if content overflows */
+}
+
+.dog-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .dog-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .dog-card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .dog-details {
+    padding: 15px;
+  }
+  
+  .dog-details h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .dog-details p {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  .dog-actions {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .dog-card:hover .dog-actions {
+    opacity: 1;
+  }
+
+  .add-dog-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-dog-button:hover {
+    background-color: #45a049; /* Slightly darker shade on hover */
+  }
+
+  .delete-button {
+    background-color: #f44336;
+  }
+  
+  .cta-button:hover {
+    opacity: 0.8;
+  } 
+
+  .shelter-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .shelter-card h3 {
+    text-align: center;
+    color: #4CAF50;
+    margin-bottom: 15px;
+  }
+  
+  .shelter-details {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .shelter-details p {
+    margin: 8px 0;
+    font-size: 1rem;
+  }
+  
+  .shelter-actions {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .edit-button, .delete-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  
+  .delete-button {
+    background-color: #f44336;
+  }
+  
+  .edit-button:hover, .delete-button:hover {
+    opacity: 0.8;
+  }
+
+  .other-shelters-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .other-shelters-card h3 {
+    text-align: center;
+    color: #4CAF50;
+    margin-bottom: 15px;
+  }
+  
+  .shelter-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .shelter-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  .shelter-info {
+    color: #333;
+  }
+  
+  .shelter-info p {
+    margin: 5px 0;
+  }
+  
+  .go-to-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  
+  .go-to-button:hover {
+    opacity: 0.8;
+  }
+  

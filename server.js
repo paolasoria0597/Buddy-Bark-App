@@ -10,6 +10,7 @@ const signInController= require("./controllers/auth/sign-in")
 const shelterController= require("./controllers/shelter.js")
 const dogController= require("./controllers/dog.js")
 const signOutController= require("./controllers/auth/sign-out")
+const dashboardController = require("./controllers/dashboard.js")
 const isSignedIn = require("./middlewares/is-signed-in.js")
 const passUserToView = require("./middlewares/pass-user-to-view.js")
 
@@ -44,15 +45,19 @@ mongoose.connect(process.env.MONGODB_URI);
 app.get('/', (req, res) => {
   res.render('home.ejs');
 });
+
+ 
+
 app.use("/sign-in", signInController)
 app.use("/sign-up", signUpController)
 // Everything before isSgnedIn is not authenticated, so the browser can access
 // TODO: Re enable this when done 
-// app.use(isSignedIn)  
+app.use(isSignedIn)  
 // Everything below or under isSignedIn is a protected route or page 
 app.use("/shelters", shelterController)
 app.use("/dogs", dogController)
 app.use("/sign-out", signOutController)
+app.use('/dashboard', dashboardController);
 
 mongoose.connection.on("connected", () => {
     console.clear();

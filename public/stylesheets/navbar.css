@@ -1,0 +1,21 @@
+/* Header Section */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: lightgray;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav {
+    display: flex;
+    gap: 15px;
+}
+
+header, section, footer {
+    padding: 20px;
+}

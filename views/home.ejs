@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome to BarkBuddy - Dog Shelters Portal</title>
     <link rel="stylesheet" href="/stylesheets/home.css" type="text/css" />
+    <link rel="stylesheet" href="/stylesheets/navbar.css" type="text/css" />
+    <link rel="stylesheet" href="/stylesheets/common.css" type="text/css" />
   </head>
   <body>
     <!-- Header Section -->
@@ -30,10 +32,11 @@
         <% } else { %>
 
         <p>
-          Welcome <%= user.name %>, You can now manage your Shelters and BarkBuddies.
+          Welcome <%= user.name %>, You can now manage your Shelters and
+          BarkBuddies.
         </p>
         <div class="hero-buttons">
-          <a href="/shelters/index.ejs" class="cta-button">Go to Dashboard</a>
+          <a href="/dashboard" class="cta-button">Go to Dashboard</a>
           <a href="/sign-out" class="cta-button">Sign Out</a>
         </div>
         <% } %>

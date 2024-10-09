@@ -4,23 +4,31 @@ const Shelter = require("../models/shelter.js");
 const router = express.Router();
 
 router.get("/shelter/:shelterId", async (req, res) => {
-  const shelter = await Shelter.findById(req.params.shelterId);
-  //   console.log(shelter)
-  res.render("dogs/dog.ejs", { message: null, shelter: shelter });
+  const shelterId = req.params.shelterId;
+  res.render("dogs/dog.ejs", { message: null, shelterId: shelterId });
 });
 
 router.post("/shelter/:shelterId", async (req, res) => {
   try {
-    req.body.shelter = req.params.shelterId; // add shelter ID to request body
-
-    await Dog.create(req.body);
-    return res.redirect("/shelters/dashboard", {
-      message: "Dog has been added successfully",
+    // req.body.shelter = req.params.shelterId; //<<====NEVER DO THIS
+    const name = req.body.name
+    const age = req.body.age
+    const breed = req.body.breed
+    const image = req.body.image
+    const shelterId = req.params.shelterId
+    await Dog.create({
+        name: name,
+        age: age, 
+        breed: breed, 
+        image: image,
+        shelter: shelterId
     });
+    res.redirect(`/dashboard?shelterId=${shelterId}`)
   } catch (error) {
     console.error("Error creating dog", error);
     return res.render("dogs/dog", {
       message: " An error occurred. Please try again!",
+      shelterId: null
     });
   }
 });
@@ -39,7 +47,7 @@ router.put("/:dogId/edit", async (req, res) => {
   try {
     const dogId = req.params.dogId;
 
-    await Dog.findByIdAndUpdate(dogId, req.body); // { new: true } option as third argument ensures the returned document is the updated one
+    await Dog.findByIdAndUpdate(dogId, req.body); // { new: true } option as third argument ensures the returned document is the updated
     return res.render("/shelters/dashboard");
   } catch (error) {
     console.error("Error updating shelter", error);

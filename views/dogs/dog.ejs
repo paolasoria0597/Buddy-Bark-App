@@ -15,7 +15,7 @@
     <div class="main-container">
         <h2> BarkBuddy: Add Dog</h2>
         <div class="container">
-            <form action="/dogs/shelter/<%= shelter._id %>" class="form" method="POST">
+            <form action="/dogs/shelter/<%= shelterId %>" class="form" method="POST">
                 <%- include('../partials/_dog.ejs', {dog: null}) %>
                 <input type="submit" value="Add" id="Add" />
             </form>

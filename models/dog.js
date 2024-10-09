@@ -18,8 +18,21 @@ const dogSchema= new mongoose.Schema({
     },
      image: {
         type: String, 
-     }
+    }
 });
+
+dogSchema.post('save', async (recentlyCreatedDog) => {
+      try{
+        const shelter = await Shelter.findById(recentlyCreatedDog.shelter)
+        if (shelter) {
+            shelter.dogs.push(recentlyCreatedDog._id)
+            await shelter.save()
+        }
+      } catch (error){
+         console.log('Error updating Shelter with new Dog. Shelter does not have a reference to this dog', error)
+      }
+})
+
 
 const Dog = mongoose.model('Dog', dogSchema);
 module.exports= Dog;

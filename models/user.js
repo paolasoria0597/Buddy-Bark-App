@@ -1,4 +1,5 @@
 const mongoose= require('mongoose');
+const Schema = mongoose.Schema;
 
 const userSchema= new mongoose.Schema({
     name: {
@@ -12,7 +13,14 @@ const userSchema= new mongoose.Schema({
     password: {
         type: String, 
         required: true,
-    }
+    },
+    //adding reference to many shelters
+    shelters: [
+        {
+            type: Schema.Types.ObjectId, 
+            ref: 'Shelter'
+        }
+    ]
 });
 
 const User = mongoose.model('User', userSchema);

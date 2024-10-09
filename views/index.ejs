@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/stylesheets/navbar.css" />
+    <link rel="stylesheet" href="/stylesheets/index.css" />
+    <link rel="stylesheet" href="/stylesheets/common.css" type="text/css" />
+  </head>
+  <body>
+    <header class="header">
+        <div class="logo">BarkBuddy</div>
+        <div class="logo">Dashboard</div>
+      <%- include('./partials/_navbar.ejs') %>
+      <a href="/sign-out" class="cta-button">Sign Out</a>
+    </header>
+
+    <div class="main-content">
+        <div class="left-panel">
+
+            <% if (currentShelter) { %>
+                <!-- HTML or EJS code to render if the condition is true -->
+                 <!-- Container When at least one Shelter Exists -->
+                <div class="header-container">                
+                    <h2>Dogs Available for Adoption</h2>
+                    <a href="/dogs/shelter/<%= currentShelter._id %>">
+                        <button class="add-dog-button cta-button">Add a Dog</button>
+                    </a>
+                </div>
+                <div class="dog-cards">
+                    <% currentShelter.dogs.forEach((dog) => { %>
+                        <div class="dog-card">
+                            <img src="<%= dog.image %>" alt="Dog 1">
+                            <div class="dog-details">
+                            <h3><%= dog.name %></h3>
+                            <p><strong>Age: </strong><%= dog.age %></p>
+                            <p><strong>Breed: </strong><%= dog.breed %></p>
+                            </div>
+                            <div class="dog-actions">
+                            <button class="edit-button cta-button">Edit</button>
+                            <button class="delete-button cta-button">Delete</button>
+                            </div>
+                        </div>
+                    <% }) %>
+                </div> 
+              <% } else { %>
+                <!-- HTML or EJS code to render if the condition is false -->
+                    <!-- Container When No Shelter Exists Yet -->
+                <div class="header-container">                
+                    <h2>No Dogs Yet!</h2>
+            
+                </div>
+                <div class="dog-cards">
+                </div> 
+              <% } %>
+
+
+
+              
+            
+            
+
+
+        </div>
+          
+
+          <div class="right-panel">
+            <div class="shelter-card">
+
+                <% if (currentShelter) { %>
+                    <!-- HTML or EJS code to render if the condition is true -->
+                    <h3>Current Shelter Information</h3>
+                    <div class="shelter-details">
+                      <p><strong>Name:</strong> <%= currentShelter.name %></p>
+                      <p><strong>Address:</strong> <%= currentShelter.address %></p>
+                      <p><strong>Phone:</strong> <%= currentShelter.phone %></p>
+                      <p><strong>Email:</strong> <%= currentShelter.email %></p>
+                    </div>
+                    <div class="shelter-actions">
+                      <form action="/shelters/edit/<%= currentShelter._id %>" method="GET">
+                          <button class="edit-button cta-button">Edit Shelter</button>
+                      </form>
+                      <button class="delete-button cta-button">Delete Shelter</button>
+                    </div>
+                  <% } else { %>
+                    <!-- HTML or EJS code to render if the condition is false -->
+                    <h3>Current Shelter Information</h3>
+                    <div class="shelter-details">
+                      <p>You have no shelters in your profile yet, Please create one</p>
+                    </div>
+                    <div class="shelter-actions">
+                        <a href="shelters/add">
+                            <button class="edit-button cta-button">Add Shelter</button>
+                        </a>
+                    </div>
+                  <% } %>
+
+              
+            </div>
+          
+            <div class="other-shelters-card">
+              <h3>Other Available Shelters</h3>
+              <div class="shelter-list">
+
+                <% remainingShelters.forEach((shelter) => { %>
+                    <div class="shelter-item">
+                      <div class="shelter-info">
+                        <p><strong>Name:</strong> <%= shelter.name %></p>
+                        <p><strong>Location:</strong> <%= shelter.address %></p>
+                      </div>
+                        <a href="/dashboard?shelterId=<%= shelter._id %>">
+                            <button class="go-to-button cta-button" >Go to Shelter</button>
+                        </a>
+                    </div>
+                  <% }) %>
+              </div>
+            </div>
+    </div>
+
+    </body>
+</html>
