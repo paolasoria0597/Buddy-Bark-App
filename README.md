@@ -1,14 +1,14 @@
-![Screenshot of Buddy Bark](public/images/logo-screenshot.png)
+![Screenshot of Bark Buddy](public/images/logo-screenshot.png)
 
-# Buddy Bark
+# Bark Buddy
 
 ## Description
 
-**Buddy Bark** is a web application designed to help dog shelter administrators manage their shelters and available dogs for adoption. With Buddy Bark, users can create and manage shelter information, add, edit, and delete dog profiles, and interact with other shelter admins by viewing and exchanging ideas about their available dogs. The app provides a simple and user-friendly interface to streamline the adoption process for shelters and helps users organize and keep track of their available dogs.
+**Bark Buddy** is a web application designed to help dog shelter administrators manage their shelters and available dogs for adoption. With Buddy Bark, users can create and manage shelter information, add, edit, and delete dog profiles, and interact with other shelter admins by viewing and exchanging ideas about their available dogs. The app provides a simple and user-friendly interface to streamline the adoption process for shelters and helps users organize and keep track of their available dogs.
 
 ### Why I built this app
 
-I built Buddy Bark to provide dog shelters with a platform where they can easily manage their facilities and pets. As a dog lover and owner of a rescued dog, I wanted to create a solution that could help shelters, like the one where I adopted my dog, organize their information efficiently. This makes it easier for potential adopters to find their perfect dog while helping shelters promote their animals through a centralized system.
+I built Bark Buddy to provide dog shelters with a platform where they can easily manage their facilities and pets. As a dog lover and owner of a rescued dog, I wanted to create a solution that could help shelters, like the one where I adopted my dog, organize their information efficiently. This makes it easier for potential adopters to find their perfect dog while helping shelters promote their animals through a centralized system.
 
 ## Getting Started
 
