@@ -1,31 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="/stylesheets/dog.css" type="text/css"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/stylesheets/navbar.css" type="text/css" />
+    <link rel="stylesheet" href="/stylesheets/common.css" type="text/css" />
+    <link rel="stylesheet" href="/stylesheets/dog.css" type="text/css" />
+    <link rel="stylesheet" href="/stylesheets/footer.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Edit Dog</title>
-</head>
-<body>
+  </head>
+  <body>
     <header class="header">
-        <div class="logo">BarkBuddy</div>
-        <%- include('../partials/_navbar.ejs') %>
-      </header>
+      <div class="logo">BarkBuddy</div>
+      <%- include('../partials/_navbar.ejs') %>
+    </header>
     <div class="main-container">
-        <h2> BarkBuddy: Add Dog</h2>
-        <div class="container">
-            <form action="/dogs/<%= dog._id %>/edit?_method=PUT"
-                class="form"
-                method="POST"
-              >
-                <%- include('../partials/_dog.ejs', { dog }) %>
-                <input type="submit" value="Update" id="Add" />
-            </form>
-    </div>
-    <div>
+      <h2>BarkBuddy: Add Dog</h2>
+      <div class="container">
+        <form
+          action="/dogs/edit/<%= dog._id %>?shelterId=<%= dog.shelter %>&_method=PUT"
+          class="form"
+          method="POST"
+        >
+          <%- include('../partials/_dog.ejs', { dog }) %>
+          <input type="submit" value="Update" id="Add" />
+        </form>
+      </div>
+      <div>
         <% if (message){ %>
         <p><%= message %></p>
-       <%} %>
+        <%} %>
+      </div>
     </div>
-</body>
+    <footer class="footer">
+      <p>&copy; 2024 BarkBuddy. All Rights Reserved.</p>
+    </footer>
+  </body>
 </html>

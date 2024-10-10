@@ -1,18 +1,22 @@
-* { 
+
+body {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* main container Whole page */
 
 .main-container {
     display: flex;
+    flex-grow: 1;
     flex-direction: column;
     align-items: center;
     justify-content:center;
     align-content: center;
-    height: 100vh;
     gap: 20px;
 }
 
@@ -41,19 +45,35 @@
     align-items: center;
 }
 
-.box {
+.form-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 60%;
+    margin: 15px 0; /* Adds some space between each row */
+}
+
+.form-group label {
+    width: 20%;
+    margin-right: 10px; /* Space between label and input */
+    font-weight: bold;
+}
+
+.form-group .box {
+
     padding: 12px;
     width: 60%;
-    margin: 15px;
     border: 1px solid black;
     outline: none;
     border-radius: 20px;
+    margin-left: 10px; /* Align the text inputs evenly */
 }
 
+/* Submit Button */
 #Add {
     padding: 15px 20px;
-    width: 50%;
-    margin: 20px 0 ;
+    width: 30%;
+    margin: 20px 0;
     background-color: #0D99FF;
     color: white;
     font-weight: bold;
@@ -61,8 +81,8 @@
     outline: none;
     border-radius: 20px;
     cursor: pointer;
-    align-self: center;
     transition: background-color 0.3s ease;
+    align-self: center; /* Center the button */
 }
 
 #Add:hover {

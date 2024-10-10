@@ -1,8 +1,44 @@
-<label for="name">Dog's Name</label>
-<input type="text" name="name" class="box" placeholder="Enter Dog's Name" value="<%=dog ? dog.name: '' %>" />
-<label for="age"> Age</label>
-<input type="number" name="age" class="box" placeholder="Enter Dog's age" value="<%=dog ? dog.age: '' %>" required />
-<label for="breed"> Breed</label>
-<input type="text" name="breed" class="box" placeholder="Enter Dog's Breed" value="<%=dog ? dog.breed: '' %>"  />
-<label for="image"> Image</label>
-<input type="text" name="image" class="box" placeholder="Enter link to the image you want to upload" value="<%=dog ? dog.image: '' %>" />
+<div class="form-group">
+  <label for="name">Dog's Name</label>
+  <input
+    type="text"
+    name="name"
+    class="box"
+    placeholder="Enter Dog's Name"
+    value="<%= dog ? dog.name : '' %>"
+  />
+</div>
+
+<div class="form-group">
+  <label for="age">Age</label>
+  <input
+    type="number"
+    name="age"
+    class="box"
+    placeholder="Enter Dog's Age"
+    value="<%= dog ? dog.age : '' %>"
+    required
+  />
+</div>
+
+<div class="form-group">
+  <label for="breed">Breed</label>
+  <input
+    type="text"
+    name="breed"
+    class="box"
+    placeholder="Enter Dog's Breed"
+    value="<%= dog ? dog.breed : '' %>"
+  />
+</div>
+
+<div class="form-group">
+  <label for="image">Image</label>
+  <input
+    type="text"
+    name="image"
+    class="box"
+    placeholder="Enter link to the image you want to upload"
+    value="<%= dog ? dog.image : '' %>"
+  />
+</div>

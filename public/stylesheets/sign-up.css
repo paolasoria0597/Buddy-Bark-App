@@ -12,6 +12,7 @@
     align-items: center;
     justify-content:center;
     align-content: center;
+    background: url('/images/sign-up.jpg') center/cover no-repeat;
     height: 100vh;
     gap: 20px;
 }
@@ -24,9 +25,10 @@
 
 .container {
     display: flex;
-    height: 400px;
+    flex-direction: column;
+    height: 450px;
     width: 800px;
-    background-color: lightgray;
+    background-color: rgba(211, 211, 211, 0.5); /* Light gray with 80% opacity */
     align-items: center;
     border-radius: 20px;
 }

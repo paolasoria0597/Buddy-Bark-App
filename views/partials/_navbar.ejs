@@ -1,9 +1,12 @@
 <nav class="nav">
-  <% if (user) { %>
-  <a href="/" class="cta-button">Home</a>
-  <a href="/shelters/add" class="cta-button">Add Shelter</a>
-  <% } else { %>
-  <a href="/sign-in" class="cta-button">Sign in</a>
-  <a href="/sign-up" class="cta-button">Sign up</a>
-  <% } %>
+  <div>
+    <% if (user) { %>
+    <a href="/"> <button class="cta-button">Home</button></a>
+    <a href="/shelters/add"><button class="cta-button">Add Shelter</button></a>
+    <a href="/sign-out"><button class="cta-button">Sign Out</button></a>
+    <% } else { %>
+    <a href="/sign-in"><button class="cta-button">Sign in</button></a>
+    <a href="/sign-up"><button class="cta-button">Sign up</button></a>
+    <% } %>
+  </div>
 </nav>

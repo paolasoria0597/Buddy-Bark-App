@@ -38,24 +38,34 @@ router.get("/:dogId/edit", async (req, res) => {
   const existingDog = await Dog.findById(req.params.dogId); // req.params.dogId
   console.log(existingDog);
   res.render("dogs/edit", {
-    message: "any message",
+    message: null,
     dog: existingDog,
   });
 });
 
-router.put("/:dogId/edit", async (req, res) => {
+router.put("/edit/:dogId", async (req, res) => {
   try {
     const dogId = req.params.dogId;
-
+    const shelterId = req.query.shelterId   
     await Dog.findByIdAndUpdate(dogId, req.body); // { new: true } option as third argument ensures the returned document is the updated
-    return res.render("/shelters/dashboard");
+    res.redirect(`/dashboard?shelterId=${shelterId}`)
   } catch (error) {
     console.error("Error updating shelter", error);
-    return res.render("/shelters/dashboard", {
-      message: "An error occurred. Please try again.",
-    });
+    res.render("dogs/edit", {
+        message: "An Error ocurred while upating dog",
+        dog: null,
+      });
   }
 });
+
+router.delete("/delete/:dogId", async (req, res) => {
+    const dogId = req.params.dogId
+    const shelterId = req.query.shelterId // passing shelterId so that I can go back to the shelter that was active(current) in dashboard
+    await Dog.deleteOne(
+        {_id: dogId}
+    )
+    res.redirect(`/dashboard?shelterId=${shelterId}`) // Redirecting to Dashboard 
+})
 
 module.exports = router;
 
