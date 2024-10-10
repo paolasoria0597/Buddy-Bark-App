@@ -1,4 +1,4 @@
-![Screenshot of Buddy Bark](/Users/paolasoria/seb/projects/bark-buddy-app/public/images/logo-screenshot.jpg)
+![Screenshot of Buddy Bark](public/images/logo-screenshot.png)
 
 # Buddy Bark
 
@@ -8,7 +8,7 @@
 
 ### Why I built this app
 
-I built Buddy Bark to provide dog shelters with a platform where they can easily manage their facilities and pets. As a dog lover and owner of a rescued dog, I wanted to create a solution that could help shelters, like the one where I adopted my dog, organize their information efficiently. This makes it easier for potential adopters to find their perfect dog while helping shelters promote their animals through a centralized system."
+I built Buddy Bark to provide dog shelters with a platform where they can easily manage their facilities and pets. As a dog lover and owner of a rescued dog, I wanted to create a solution that could help shelters, like the one where I adopted my dog, organize their information efficiently. This makes it easier for potential adopters to find their perfect dog while helping shelters promote their animals through a centralized system.
 
 ## Getting Started
 
