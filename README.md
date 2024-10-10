@@ -14,11 +14,11 @@ I built Buddy Bark to provide dog shelters with a platform where they can easily
 
 ### Deployed App
 
-[https://barkbuddy-3377d30b5fb1.herokuapp.com/](#)
+(https://barkbuddy-3377d30b5fb1.herokuapp.com)
 
 ### Planning Materials
 
-[https://trello.com/b/fQnDLpk0/my-barkbuddy-app](#)
+(https://trello.com/b/fQnDLpk0/my-barkbuddy-app)
 
 ## Technologies Used
 
