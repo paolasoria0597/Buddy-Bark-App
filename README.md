@@ -1,4 +1,4 @@
-![Screenshot of Buddy Bark](./images/landing-dog.jpg)
+![Screenshot of Buddy Bark](./images/logo-screenshot.jpg)
 
 # Buddy Bark
 
